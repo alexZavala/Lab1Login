@@ -35,16 +35,20 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import android.widget.CompoundButton.OnCheckedChangeListener;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
-
 /**
  * A login screen that offers login via email/password.
  */
 public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {
+
+    //EditText mEtPwd;
+    //CheckBox mCbShowPwd;
 
     /**
      * Id to identity READ_CONTACTS permission request.
@@ -71,6 +75,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         // Set up the login form.
@@ -88,6 +95,25 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 return false;
             }
         });
+
+//        // get the show/hide password Checkbox
+//        mCbShowPwd = (CheckBox) findViewById(R.id.checkBox);
+//
+//        // add onCheckedListener on checkbox
+//        // when user clicks on this checkbox, this is the handler.
+//        mCbShowPwd.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+//
+//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                // checkbox status is changed from uncheck to checked.
+//                if (!isChecked) {
+//                    // show password
+//                    mEtPwd.setTransformationMethod(PasswordTransformationMethod.getInstance());
+//                } else {
+//                    // hide password
+//                    mEtPwd.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+//                }
+//            }
+//        });
 
         Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
         mEmailSignInButton.setOnClickListener(new OnClickListener() {

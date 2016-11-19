@@ -72,6 +72,12 @@
                 android:text="@string/action_sign_in"
                 android:textStyle="bold" />
 
+            <CheckBox
+                android:text="Show/Hide Password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/checkBox" />
+
 
         </LinearLayout>
     </ScrollView>
